@@ -1,7 +1,7 @@
 {
   "name": "loan-application-exam",
   "version": "1.0.0",
-  "description": "",
+  "description": "Loan Application RESTful API using Express and TypeScript",
   "main": "src/index.ts",
   "scripts": {
     "build": "npx tsc",
