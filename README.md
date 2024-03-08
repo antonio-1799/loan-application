@@ -62,4 +62,4 @@ npm run test
 
 ### Branches
 
-* Master
+* master
