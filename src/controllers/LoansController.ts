@@ -170,10 +170,9 @@ export const deleteLoan = async (req: Request, res: Response) => {
     });
 
   // Remove loan application by id
-  const indexToRemove = loanApplications.findIndex(
-    (loanApplication) => loanApplication.id === existingLoanApplication.id,
+  loanApplications = loanApplications.filter(
+    (loanApplication) => loanApplication.id !== existingLoanApplication.id,
   );
-  loanApplications.splice(indexToRemove, 1);
 
   return response.success({
     res,
