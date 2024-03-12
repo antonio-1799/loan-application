@@ -6,7 +6,6 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(process.env.PREFIX || '/v1/api', router);
 
