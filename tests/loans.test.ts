@@ -48,9 +48,9 @@ describe('Loan Application', () => {
 
   describe('GET - Get loan application by id', () => {
     it('should get loan application by id', async () => {
-      const res = await request(app)
-        .get(`/v1/api/loans/${loanApplicationSeed.id}`)
-        .send(loanApplicationSeed);
+      const res = await request(app).get(
+        `/v1/api/loans/${loanApplicationSeed.id}`,
+      );
 
       expect(res.status).toEqual(200);
       expect(res.body).toHaveProperty('data');
@@ -58,9 +58,9 @@ describe('Loan Application', () => {
     });
 
     it('should throw error due to loan application not found', async () => {
-      const res = await request(app)
-        .get(`/v1/api/loans/${randomLoanApplicationId}`)
-        .send(loanApplicationError);
+      const res = await request(app).get(
+        `/v1/api/loans/${randomLoanApplicationId}`,
+      );
 
       expect(res.status).toEqual(404);
       expect(res.body).toHaveProperty('message');
@@ -85,9 +85,7 @@ describe('Loan Application', () => {
     });
 
     it('should return empty loan applications', async () => {
-      const res = await request(app)
-        .get(`/v1/api/loans`)
-        .send(loanApplicationSeed);
+      const res = await request(app).get(`/v1/api/loans`);
 
       expect(res.status).toEqual(200);
       expect(res.body).toHaveProperty('data');
@@ -101,9 +99,7 @@ describe('Loan Application', () => {
         request(app).post('/v1/api/loans').send(loanApplicationSuccess),
       ]);
 
-      const res = await request(app)
-        .get(`/v1/api/loans`)
-        .send(loanApplicationSeed);
+      const res = await request(app).get(`/v1/api/loans`);
 
       expect(res.status).toEqual(200);
       expect(res.body).toHaveProperty('data');
