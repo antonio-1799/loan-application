@@ -48,7 +48,7 @@ export const createLoan = async (
     loanTerm,
   });
 
-  // Add id, monthly payment and loan term to loan application
+  // Add monthly payment and loan term to loan application
   Object.assign(req.body, { monthlyPayment });
   Object.assign(req.body, { loanTerm });
 
