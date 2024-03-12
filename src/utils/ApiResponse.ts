@@ -1,6 +1,6 @@
 import { Response } from 'express';
-import { StatusCodes } from '../common/enums';
 import { ILoanApplication } from '../models/LoanApplication';
+import { StatusCodes } from '../common/constants';
 
 interface IBaseResponse {
   res: Response;

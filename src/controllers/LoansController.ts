@@ -1,9 +1,8 @@
 import { Request, Response } from 'express';
 import { ILoanApplication } from '../models/LoanApplication';
 import { ApiResponse } from '../utils/ApiResponse';
-import { StatusCodes } from '../common/enums';
 import { calculateMonthlyPayment } from '../utils/calculateMonthlyPayment';
-import { loanTermMap } from '../common/constants';
+import { loanTermMap, StatusCodes } from '../common/constants';
 
 // In-memory collection
 let loanApplications: ILoanApplication[] = [];

@@ -1,7 +1,7 @@
 import { RequestHandler } from 'express';
 import { ApiResponse } from '../utils/ApiResponse';
-import { StatusCodes } from '../common/enums';
 import { ObjectSchema } from 'joi';
+import { StatusCodes } from '../common/constants';
 
 const response = new ApiResponse();
 
