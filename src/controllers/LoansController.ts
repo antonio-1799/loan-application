@@ -135,14 +135,15 @@ export const updateLoan = async (req: Request, res: Response) => {
     monthlyPayment,
   };
 
-  // Remove existing loan application by id
-  const indexToRemove = loanApplications.findIndex(
+  const indexToUpdate = loanApplications.findIndex(
     (loanApplication) => loanApplication.id === existingLoanApplication.id,
   );
-  loanApplications.splice(indexToRemove, 1);
 
-  // Push updated loan application
-  loanApplications.push(updatedLoanApplication);
+  loanApplications = [
+    ...loanApplications.slice(0, indexToUpdate),
+    updatedLoanApplication,
+    ...loanApplications.slice(indexToUpdate + 1),
+  ];
 
   return response.success({
     res,
