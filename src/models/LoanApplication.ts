@@ -7,4 +7,6 @@ export interface ILoanApplication {
   loanType: LoanType;
   income: number;
   interestRate: number;
+  monthlyPayment: number | undefined;
+  loanTerm: number | undefined;
 }
