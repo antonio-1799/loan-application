@@ -37,10 +37,7 @@ describe('Loan Application', () => {
     });
 
     it('should throw error due to loan application already existing', async () => {
-      // 1st application created
-      await request(app).post('/v1/api/loans').send(loanApplicationSeed);
-
-      // 2nd loan application
+      // Application was seeded, already existing
       const res = await request(app)
         .post('/v1/api/loans')
         .send(loanApplicationSeed);
