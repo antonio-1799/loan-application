@@ -1,4 +1,4 @@
-import { RequestHandler } from 'express';
+import { Request, Response, NextFunction, RequestHandler } from 'express';
 import { ApiResponse } from '../utils/ApiResponse';
 import { ObjectSchema } from 'joi';
 import { StatusCodes } from '../common/constants';
@@ -6,7 +6,7 @@ import { StatusCodes } from '../common/constants';
 const response = new ApiResponse();
 
 export const schemaValidator = (schema: ObjectSchema): RequestHandler => {
-  return (req, res, next) => {
+  return (req: Request, res: Response, next: NextFunction) => {
     const { error } = schema.validate(req.body, {
       abortEarly: true,
     });
